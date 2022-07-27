@@ -1,0 +1,110 @@
+/*Make picture smaller as the base
+  center it
+  adjust quote and text styling
+  maybe just make main smaller lmao*/
+
+body{
+  background: rgb(56,56,56);
+}
+
+#main {
+  background: LightGray;
+  /*format the content in a grid*/
+  display: grid;
+  /*Grid will have 6 areas defiined by the size of the content in them*/
+  grid-template-areas: 
+    "header header"
+    "image quote"
+    "content content";
+  /*Content won't get too stretched*/ 
+  max-width:80%;
+  /*Centers on the page*/
+  margin:auto;
+  border-style:solid;
+  border-width:10px;
+  border-color:black;
+  border-radius:20px;
+}
+
+/*Rearrange columns if media not big enough*/
+@media (max-width: 700px){
+    #main {
+    background: LightGray;
+    /*format the content in a grid*/
+    display: grid;
+    /*Grid will have 6 areas defiined by the size of the content in them*/
+    grid-template-areas: 
+      "header"
+      "image"
+      "quote"
+      "content";
+
+    /*Content won't get too stretched*/ 
+    /*max-width:100%;*/
+    /*Centers on the page*/
+    margin:auto;
+  }
+  
+  #quote{
+    padding: 0 2% 0 2%;
+    font-size: 2.5vw;
+  }
+}
+
+#title{
+  grid-area:header;
+  text-align:center;
+  font-size:3vw;
+  
+}
+
+#img-div{
+  grid-area:image;
+}
+
+h1{
+  /*added so that the header does not have extra space*/
+  display:inline;
+}
+
+h2{
+  text-align:center;
+}
+
+#quote{
+  display:flex;
+  /*Centers The Element Horizontally*/
+  justify-content:center;
+  /*Centers The Element Vertically*/
+  align-items:center;
+  grid-area:quote;
+  font-size: 38px;
+
+}
+
+#tribute-info{
+  grid-area:content;
+}
+
+img{
+  /*image sizes responsively with page*/
+  display:block;
+  max-height:50%;
+  max-width:50%;
+  width:auto;
+  height:auto;
+  /*centers within the fig*/
+  margin:auto;
+}
+
+#img-caption{
+  /*Centers text under the image*/
+  text-align:center;
+  Color:#000;
+}
+
+#link-p{
+  text-align:center;
+}
+
+
